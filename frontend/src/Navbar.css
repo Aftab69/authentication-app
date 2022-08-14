@@ -17,6 +17,11 @@ span:hover{
     border-bottom: 2px solid white;
 }
 
+@media only screen and (max-width: 300px){
+    nav{
+        font-size: 0.75rem;
+    }
+}
 @media only screen and (min-width:1921px) and (max-width:2880px){
     nav{
         font-size: 1.5rem;

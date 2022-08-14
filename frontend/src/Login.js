@@ -3,7 +3,17 @@ import "./Login.css";
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <>
+      <div className='loginpageContainer'>
+          <div className='logininfoContainer'>
+              <p>Email :</p>
+              <input />
+              <p>Password :</p>
+              <input />
+              <button>Login</button>
+          </div>
+      </div>
+    </>
   )
 }
 
