@@ -3,7 +3,21 @@ import "./Register.css";
 
 const Register = () => {
   return (
-    <div>Register</div>
+    <>
+      <div className='registerpageContainer'>
+          <div className='registerinfoContainer'>
+              <p>Full Name :</p>
+              <input />
+              <p>Email :</p>
+              <input />
+              <p>Password :</p>
+              <input />
+              <p>Confirm Password :</p>
+              <input />
+              <button>Login</button>
+          </div>
+      </div>
+    </>
   )
 }
 
