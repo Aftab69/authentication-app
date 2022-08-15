@@ -42,13 +42,13 @@ const Register = () => {
       <div className='registerpageContainer'>
           <form method='POST' onSubmit={handleSubmit} className='registerinfoContainer'>
               <p>Full Name :</p>
-              <input name='name' onChange={handleChange} />
+              <input type="text" name='name' onChange={handleChange} />
               <p>Email :</p>
-              <input name='email' onChange={handleChange} />
+              <input type="email" name='email' onChange={handleChange} />
               <p>Password :</p>
-              <input name='password' onChange={handleChange} />
+              <input type="password" name='password' onChange={handleChange} />
               <p>Confirm Password :</p>
-              <input name='cpassword' onChange={handleChange} />
+              <input type="password" name='cpassword' onChange={handleChange} />
               <button type='submit'>Login</button>
           </form>
       </div>

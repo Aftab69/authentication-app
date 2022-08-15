@@ -39,9 +39,9 @@ const Login = () => {
       <div className='loginpageContainer'>
           <form method='POST' onSubmit={handleSubmit} className='logininfoContainer'>
               <p>Email :</p>
-              <input name='email' onChange={handleChange}/>
+              <input type="email" name='email' onChange={handleChange}/>
               <p>Password :</p>
-              <input name='password' onChange={handleChange}/>
+              <input type="password" name='password' onChange={handleChange}/>
               <button type='submit'>Login</button>
           </form>
       </div>
