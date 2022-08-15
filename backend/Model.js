@@ -17,7 +17,13 @@ const userSchema = new Schema({
     cpassword: {
         type: String,
         required: true
-    }
+    },
+    tokens:[{
+        token:{
+            type: String,
+            required: true
+        }
+    }]
 })
 
 const User = mongoose.model("user",userSchema);

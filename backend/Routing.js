@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("./Model");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 router.get("/",(req,res)=>{
     res.send("Hi there")
@@ -44,6 +45,9 @@ router.post("/login",async(req,res)=>{
         if(!passwordMatched){
             res.json({"message":"Invalid credentials"})
         } else if(passwordMatched){
+            const token = jwt.sign({_id:userExist._id},process.env.PRIVATEKEY);
+            userExist.tokens.push({token: token});
+            userExist.save();
             res.json({"message":"User successfully logged in"})
         }
     }catch(error){
