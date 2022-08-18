@@ -23,6 +23,24 @@ const userSchema = new Schema({
             type: String,
             required: true
         }
+    }],
+    pictures:[{
+        background:{
+            type: String,
+            required: true
+        },
+        fontFamily:{
+            type: String,
+            required: true
+        },
+        valquote:{
+            type: String,
+            required: true
+        },
+        valinput:{
+            type: String,
+            required: true
+        }
     }]
 })
 

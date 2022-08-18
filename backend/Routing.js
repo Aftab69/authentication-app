@@ -72,4 +72,17 @@ router.post("/login",async(req,res)=>{
     }
 })
 
+router.post("/upload", async(req,res)=>{
+    try{
+        const { background, fontFamily, valquote, valinput } = req.body;
+        const verifiedToken = jwt.verify(req.cookies.jwtoken,process.env.PRIVATEKEY);
+        const particularUser = await User.findOne({_id:verifiedToken._id})
+        particularUser.pictures.push({background, fontFamily, valquote, valinput});
+        particularUser.save();
+        res.status(200).send(particularUser);
+    }catch(error){
+        console.log(error)
+    }
+})
+
 module.exports = router;

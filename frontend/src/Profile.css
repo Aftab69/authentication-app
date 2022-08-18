@@ -77,6 +77,30 @@
     font-size: 1.75rem;
     font-weight: 600;
 }
+.displayInterfaceContainerForView{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./Images/forviewbackground.jpg");
+    background-size: cover;
+}
+.displayInterfaceForView{
+    border: 3px solid black;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.displayInterfaceForView>p{
+    width: 80%;
+    text-align:center;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
 .customizeInterfaceContainer{
     width: 100%;
     min-height: 80vh;
@@ -196,12 +220,42 @@
     align-items: center;
 }
 .inputContainerSemicontainer2{
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     width: 100%;
+    min-height: 26.66vh ;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
+}
+.inputContainerSemicontainer2a{
+    border: 1px solid purple;
+    width: 100%;
+    min-height: 13.33vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.inputContainerSemicontainer2b{
+    border: 1px solid purple;
+    width: 100%;
+    min-height: 13.33vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputContainerSemicontainer2b>button{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background: #000000;
+    color: white;
+    margin: 20px;
+}
+.inputContainerSemicontainer2b>button:hover{
+    background: #1f1f1f;
+    cursor: pointer;
 }
 .inputContainerTextarea{
     /* border: 1px solid orangered; */

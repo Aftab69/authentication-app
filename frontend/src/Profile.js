@@ -5,12 +5,12 @@ import "./Profile.css";
 const Profile = () => {
   const navigate = useNavigate();
   const [ visibility, setVisibility ] = useState({display:"none"})
-  const [ data, setData] = useState({})
+  const [ userdata, setUserdata] = useState({})
   const [ maininterfacestyle, setMaininterfacestyle ] = useState({display:"none"})
   const [ displayinterfacecolor, setDisplayinterfacecolor ] = useState({background:"white"})
   const [ quote, setQuote ] = useState("")
   const [ authorinput, setAuthorinput] = useState("")
-  const [ fontstyle, setFontstyle ] = useState({fontFamily:"'Josefin Sans', sans-serif"}) 
+  const [ fontstyle, setFontstyle ] = useState({fontFamily:"'Josefin Sans', sans-serif"})
 
   const getData = async() =>{
       try{
@@ -23,7 +23,7 @@ const Profile = () => {
                   })
         if(res.status===200){
             const data = await res.json();
-            setData(data); //data of the user
+            setUserdata(data); //data of the user
             setVisibility({display:"block"})
         } else if(res.status===400) {
             navigate("/login")
@@ -67,12 +67,51 @@ const Profile = () => {
       }
     })
   }
+  const uploadFile = async() =>{
+    try{
+      const res = await fetch("/upload",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        credentials:"include",
+        body:JSON.stringify({
+          background:displayinterfacecolor.background,
+          fontFamily:fontstyle.fontFamily,
+          valquote:quote,
+          valinput:authorinput
+        })
+      })
+      if(res.status===200){
+        const receivedUserData = await res.json();
+        setUserdata(receivedUserData)
+        setQuote("")
+        setAuthorinput("")
+        setDisplayinterfacecolor({background:"white"})
+        setFontstyle({fontFamily:"'Josefin Sans', sans-serif"})
+        document.getElementById('textArea').value = ''
+        document.getElementById('inputArea').value = ''
+        alert("picture uploaded")
+        setMaininterfacestyle({display:"none"})
+      } else {
+        console.log("error in uploading picture")
+      }
+    }catch(error){
+      console.log(error)
+    }
+  }
+  const handleFinalUpload = (e) =>{
+    e.preventDefault();
+    uploadFile();
+  }
+  console.log(userdata);
+
   return (
     <>
       <div style={visibility}>
         <div className='profilepageContainer'>
           <div className='profilepageheadingContainer'>
-            <div className='profilepageheadingText'><p>Welcome, {data.name}</p></div>
+            <div className='profilepageheadingText'><p>Welcome, {userdata.name}</p></div>
             <div className='profilepageheadingButton'><button onClick={handleCustomizeButton}>Upload your quote</button></div>
           </div>
           <div className='mainInterfaceContainer' style={maininterfacestyle}>
@@ -95,7 +134,6 @@ const Profile = () => {
                       <button name='#1abc9c' onClick={handleColorChange}></button>
                     </div>
                   </div>
-                  
                 </div>
                 <div className='fontContainer'>
                   <div className='fontContainerBox'>
@@ -110,18 +148,28 @@ const Profile = () => {
                 <div className='inputContainer'>
                   <div className='inputContainerSemicontainer1'>
                     <div><p>Write your quote:</p></div>
-                    <div className='inputContainerTextarea'><textarea maxlength="360" onChange={handleQuote} /></div>
+                    <div className='inputContainerTextarea'><textarea id='textArea' maxLength="360" onChange={handleQuote} /></div>
                   </div>
                   <div className='inputContainerSemicontainer2'>
-                    <div><p>Quote by:</p></div>
-                    <div className='inputContainerInputarea'><input maxlength="30" onChange={handleAuthorInput} /></div>
+                    <div className='inputContainerSemicontainer2a'>
+                      <div><p>Quote by:</p></div>
+                      <div className='inputContainerInputarea'><input id='inputArea' maxLength="30" onChange={handleAuthorInput} /></div>
+                    </div>
+                    <div className='inputContainerSemicontainer2b'>
+                      <button onClick={handleFinalUpload}>Upload</button>
+                    </div>
                   </div> 
                 </div>
               </div>
           </div>
-          <div>
-            <p>After main interface container</p>
-          </div>
+          {userdata.pictures && userdata.pictures.map((elem)=>(
+            <div className='displayInterfaceContainerForView'>
+                <div className='displayInterfaceForView' style={{background:elem.background}}>
+                  <p style={{fontFamily:elem.fontFamily}}>{elem.valquote}</p>
+                  <p style={{fontFamily:elem.fontFamily}}>{elem.valinput}</p>
+                </div>
+            </div>
+          ))}
         </div>
       </div>
     </>
