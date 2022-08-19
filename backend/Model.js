@@ -40,6 +40,10 @@ const userSchema = new Schema({
         valinput:{
             type: String,
             required: true
+        },
+        date:{
+            type: Date,
+            default: Date.now
         }
     }]
 })

@@ -76,6 +76,7 @@ const Profile = () => {
         },
         credentials:"include",
         body:JSON.stringify({
+          date: Date.now(),
           background:displayinterfacecolor.background,
           fontFamily:fontstyle.fontFamily,
           valquote:quote,
@@ -104,7 +105,6 @@ const Profile = () => {
     e.preventDefault();
     uploadFile();
   }
-  console.log(userdata);
 
   return (
     <>
@@ -163,7 +163,7 @@ const Profile = () => {
               </div>
           </div>
           {userdata.pictures && userdata.pictures.map((elem)=>(
-            <div className='displayInterfaceContainerForView'>
+            <div key={elem.valinput} className='displayInterfaceContainerForView'>
                 <div className='displayInterfaceForView' style={{background:elem.background}}>
                   <p style={{fontFamily:elem.fontFamily}}>{elem.valquote}</p>
                   <p style={{fontFamily:elem.fontFamily}}>{elem.valinput}</p>

@@ -1,14 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const User = require("./Model");
+const Picture = require("./Picturemodel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 router.use(cookieParser());
-
-router.get("/",(req,res)=>{
-    res.send("Hi there")
-})
 
 router.get("/profile",async(req,res)=>{
     try{
@@ -44,7 +41,7 @@ router.post("/register",async(req,res)=>{
         }
     }catch(error){
         console.log(error)
-    }  
+    }
 })
 
 router.post("/login",async(req,res)=>{
@@ -74,11 +71,15 @@ router.post("/login",async(req,res)=>{
 
 router.post("/upload", async(req,res)=>{
     try{
-        const { background, fontFamily, valquote, valinput } = req.body;
+        const { background, fontFamily, valquote, valinput, date } = req.body;
         const verifiedToken = jwt.verify(req.cookies.jwtoken,process.env.PRIVATEKEY);
         const particularUser = await User.findOne({_id:verifiedToken._id})
-        particularUser.pictures.push({background, fontFamily, valquote, valinput});
-        particularUser.save();
+        particularUser.pictures.push({background, fontFamily, valquote, valinput, date});
+        await particularUser.save();
+        const newPicture = new Picture({
+            background, fontFamily, valquote, valinput, date
+        })
+        await newPicture.save();
         res.status(200).send(particularUser);
     }catch(error){
         console.log(error)
