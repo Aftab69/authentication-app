@@ -65,6 +65,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .displayInterface>p{
     width: 80%;
@@ -78,17 +79,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("./Images/forviewbackground.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./Images/forviewbackground.jpg");
     background-size: cover;
 }
 .displayInterfaceForView{
     border: 3px solid black;
+    margin: 5%;
     width: 400px;
     height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .displayInterfaceForView>p{
     width: 80%;
@@ -302,11 +305,25 @@
         flex-direction: column;
     }
     .displayInterfaceContainer{
-        margin: 5% 0;
         min-height: 420px;
     }
     .displayInterface{
+        margin: 5%;
         width: 280px;
         height: 420px;
+    }
+    .displayInterfaceContainerForView{
+        min-height: 420px;
+    }
+    .displayInterfaceForView{
+        margin: 5%;
+        width: 280px;
+        height: 420px;
+    }
+    .displayInterface>P{
+        font-size: 1.1rem;
+    }
+    .displayInterfaceForView>p{
+        font-size: 1.1rem;
     }
 }
