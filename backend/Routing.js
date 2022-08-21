@@ -7,6 +7,15 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 router.use(cookieParser());
 
+router.get("/home",async(req,res)=>{
+    try{
+        let pic = await Picture.find().sort({date:-1})
+        res.send(pic)
+    }catch(error){
+        console.log(error)
+    }
+})
+
 router.get("/profile",async(req,res)=>{
     try{
         const verifiedToken = jwt.verify(req.cookies.jwtoken,process.env.PRIVATEKEY);

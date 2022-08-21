@@ -1,0 +1,24 @@
+.homeDisplayInterfaceContainerForView{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./Images/forviewbackground.jpg");
+    background-size: cover;
+}
+.homeDisplayInterfaceForView{
+    border: 3px solid black;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.homeDisplayInterfaceForView>p{
+    width: 80%;
+    text-align:center;
+    font-size: 1.75rem;
+    font-weight: 600;
+}

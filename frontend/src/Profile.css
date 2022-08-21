@@ -2,13 +2,11 @@
     box-sizing: border-box;
 }
 .profilepageContainer{
-    /* border: 1px solid red; */
     width: 100%;
     min-height: 90vh;
     font-family: 'Josefin Sans', sans-serif;
 }
 .profilepageheadingContainer{
-    /* border: 1px solid blue; */
     width: 100%;
     min-height: 10vh;
     display: flex;
@@ -17,7 +15,6 @@
 }
 .profilepageheadingText{
     width: 100%;
-    border: 1px solid blue;
     font-size: 1.5rem;
     font-weight: 600;
     display:flex;
@@ -29,7 +26,6 @@
 }
 .profilepageheadingButton{
     width: 100%;
-    border: 1px solid blue;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +44,7 @@
     cursor: pointer;
 }
 .mainInterfaceContainer{
-    /* border: 1px solid orangered; */
+    background: rgb(197, 197, 197);
     width: 100%;
     min-height: 80vh;
     display: flex;
@@ -57,7 +53,6 @@
 .displayInterfaceContainer{
     width: 100%;
     min-height: 80vh;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,14 +99,12 @@
 .customizeInterfaceContainer{
     width: 100%;
     min-height: 80vh;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .colorContainer{
-    border: 1px solid green;
     width: 100%;
     min-height:26.66vh;
     display: flex;
@@ -119,21 +112,20 @@
     align-items: center;
 }
 .colorContainerBox{
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .colorContainerButtons{
-    /* border: 1px solid green; */
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 .colorContainerButtons>button{
-    margin: 0 10px;
+    margin: 10px 10px;
     border: 2px solid black;
     width: 30px;
     height: 30px;
@@ -160,7 +152,6 @@
     background: #1abc9c;
 }
 .fontContainer{
-    border: 1px solid green;
     width: 100%;
     min-height:26.66vh;
     display: flex;
@@ -168,7 +159,6 @@
     align-items: center;
 }
 .fontContainerBox{
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -203,7 +193,6 @@
     font-family: 'Cormorant Garamond', serif;
 }
 .inputContainer{
-    /* border: 1px solid green; */
     width: 100%;
     min-height:26.66vh;
     display: flex;
@@ -212,7 +201,6 @@
     align-items: flex-start;
 }
 .inputContainerSemicontainer1{
-    /* border: 1px solid blue; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -220,7 +208,6 @@
     align-items: center;
 }
 .inputContainerSemicontainer2{
-    border: 1px solid blue;
     width: 100%;
     min-height: 26.66vh ;
     display: flex;
@@ -229,7 +216,6 @@
     align-items:center;
 }
 .inputContainerSemicontainer2a{
-    border: 1px solid purple;
     width: 100%;
     min-height: 13.33vh;
     display: flex;
@@ -238,7 +224,6 @@
     align-items: center;
 }
 .inputContainerSemicontainer2b{
-    border: 1px solid purple;
     width: 100%;
     min-height: 13.33vh;
     display: flex;
@@ -258,7 +243,6 @@
     cursor: pointer;
 }
 .inputContainerTextarea{
-    /* border: 1px solid orangered; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -274,7 +258,6 @@
 .inputContainerInputarea{
     width: 100%;
     min-height: 30px;
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -284,5 +267,46 @@
     font-size: 1.5rem;
     width: 90%;
     min-height: 30px;
-    /* border: 1px solid blue; */
+}
+
+@media only screen and (min-width:481px) and (max-width:1080px){
+    .profilepageheadingContainer{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .mainInterfaceContainer{
+        flex-direction: column;
+    }
+    .fontContainerButtons{
+        flex-direction: column;
+    }
+    .inputContainer{
+        flex-direction: column;
+    }
+    .displayInterfaceContainer{
+        margin: 5% 0;
+        min-height: 600px;
+    }
+}
+@media only screen and (max-width:480px) {
+    .profilepageheadingContainer{
+        flex-direction: column;
+    }
+    .mainInterfaceContainer{
+        flex-direction: column;
+    }
+    .fontContainerButtons{
+        flex-direction: column;
+    }
+    .inputContainer{
+        flex-direction: column;
+    }
+    .displayInterfaceContainer{
+        margin: 5% 0;
+        min-height: 420px;
+    }
+    .displayInterface{
+        width: 280px;
+        height: 420px;
+    }
 }
