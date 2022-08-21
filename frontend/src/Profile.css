@@ -327,3 +327,94 @@
         font-size: 1.1rem;
     }
 }
+
+@media only screen and (min-width:1921px) and (max-width:2880px){
+    .displayInterfaceForView{
+        width: 600px;
+        height: 900px;
+    }
+    .displayInterfaceForView>p{
+        font-size: 2.625rem;
+    }
+    .profilepageheadingText{
+        font-size: 2.25rem;
+    }
+    .profilepageheadingButton>button{
+        font-size: 1.5rem;
+    }
+    .displayInterface{
+        margin: 5% 0;
+        width: 600px;
+        height: 900px;
+    }
+    .subheadingContainer>p{
+        font-size: 1.5rem;
+    }
+    .inputContainerSemicontainer2b>button{
+        font-size: 1.5rem;
+    }
+    .colorContainerButtons>button{
+        width: 45px;
+        height: 45px;
+    }
+    .fontContainerButtons>button{
+        font-size: 2.25rem;
+        padding: 15px;
+    }
+    .inputContainerTextarea>textarea{
+        font-size: 2.25rem;
+        min-height: 225px;
+    }
+    .inputContainerInputarea>input{
+        font-size: 2.25rem;
+        min-height: 45px;
+    }
+    .displayInterface>p{
+        font-size: 2.25rem;
+    }
+}
+@media only screen and (min-width:2881px){
+    .displayInterfaceForView{
+        width: 800px;
+        height: 1200px;
+    }
+    .displayInterfaceForView>p{
+        font-size: 3.5rem;
+    }
+    .profilepageheadingText{
+        font-size: 3rem;
+    }
+    .profilepageheadingButton>button{
+        font-size: 2rem;
+    }
+    .displayInterface{
+        margin: 5% 0;
+        width: 800px;
+        height: 1200px;
+    }
+    .subheadingContainer>p{
+        font-size: 2rem;
+    }
+    .inputContainerSemicontainer2b>button{
+        font-size: 2rem;
+    }
+    .colorContainerButtons>button{
+        width: 60px;
+        height: 60px;
+    }
+    .fontContainerButtons>button{
+        padding: 20px;
+        font-size: 3rem;
+    }
+    .inputContainerTextarea>textarea{
+        font-size: 3rem;
+        min-height: 300px;
+    }
+    .inputContainerInputarea>input{
+        font-size: 3rem;
+        min-height: 60px;
+    }
+    .displayInterface>p{
+        font-size: 3rem;
+    }
+}

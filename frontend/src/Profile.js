@@ -124,7 +124,7 @@ const Profile = () => {
               <div className='customizeInterfaceContainer'>
                 <div className='colorContainer'>
                   <div className='colorContainerBox'>
-                    <div><p>Choose color:</p></div>
+                    <div className='subheadingContainer'><p>Choose color:</p></div>
                     <div className='colorContainerButtons'>
                       <button name='#3498db' onClick={handleColorChange}></button>
                       <button name='#e67e22' onClick={handleColorChange}></button>
@@ -137,7 +137,7 @@ const Profile = () => {
                 </div>
                 <div className='fontContainer'>
                   <div className='fontContainerBox'>
-                    <div><p>Choose font family:</p></div>
+                    <div className='subheadingContainer'><p>Choose font family:</p></div>
                     <div className='fontContainerButtons'>
                       <button name="'Josefin Sans', sans-serif" onClick={handleFontChange}>Click to try me</button>
                       <button name="'Dancing Script', cursive" onClick={handleFontChange}>Click to try me</button>
@@ -147,12 +147,12 @@ const Profile = () => {
                 </div>
                 <div className='inputContainer'>
                   <div className='inputContainerSemicontainer1'>
-                    <div><p>Write your quote:</p></div>
+                    <div className='subheadingContainer'><p>Write your quote:</p></div>
                     <div className='inputContainerTextarea'><textarea id='textArea' maxLength="360" onChange={handleQuote} /></div>
                   </div>
                   <div className='inputContainerSemicontainer2'>
                     <div className='inputContainerSemicontainer2a'>
-                      <div><p>Quote by:</p></div>
+                      <div className='subheadingContainer'><p>Quote by:</p></div>
                       <div className='inputContainerInputarea'><input id='inputArea' maxLength="30" onChange={handleAuthorInput} /></div>
                     </div>
                     <div className='inputContainerSemicontainer2b'>
