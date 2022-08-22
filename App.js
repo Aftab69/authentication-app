@@ -7,7 +7,11 @@ require("./Connection");
 app.use(require("./Routing"));
 require("./Model");
 
+//for heroku
+if(process.env.NODE_ENV == "production"){
+    app.use(express.static("client/build"));
+}
 
-app.listen(process.env.PORT,(req,res)=>{
+app.listen(process.env.PORT || 5000,(req,res)=>{
     console.log(`app is running at ${process.env.PORT}`)
 });
