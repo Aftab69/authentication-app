@@ -16,7 +16,7 @@ router.get("/home",async(req,res)=>{
     }
 })
 
-router.get("/profile",async(req,res)=>{
+router.get("/api/profile",async(req,res)=>{
     try{
         const verifiedToken = jwt.verify(req.cookies.jwtoken,process.env.PRIVATEKEY);
         const userData = await User.findOne({_id:verifiedToken._id})

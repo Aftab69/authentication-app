@@ -14,7 +14,7 @@ const Profile = () => {
 
   const getData = async() =>{
       try{
-        const res = await fetch("/profile",{
+        const res = await fetch("/api/profile",{
                     method:"GET",
                     headers:{
                       "Content-Type":"application/json"
