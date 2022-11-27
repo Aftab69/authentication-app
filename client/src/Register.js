@@ -47,7 +47,7 @@ const Register = () => {
               <input type="email" name='email' onChange={handleChange} />
               <p>Password :</p>
               <input type="password" name='password' onChange={handleChange} />
-              <p>Confirm Password :</p>
+              <p>Confirm password :</p>
               <input type="password" name='cpassword' onChange={handleChange} />
               <button type='submit'>Login</button>
           </form>
